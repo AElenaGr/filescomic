@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+
+    <!--
+
+     Objetivos de la actividad:
+        -Cambiar la fuente de  las  imágenes
+        -Cambiar el texto
+        -Asignación de clases en los atributos
+        -Copiar nodos html
+    -->
+
+    <!-- 
+    En este proyecto se puede crear tu propia tira cómica utilizando y Fotos cuadradas tiene - entonces ¿por qué no usar las fotos de tu cuenta de Instagram o de Facebook?  Tendrás
+    ser capaz de añadir imágenes, agregar, copiar en leyendas y globos de la historia.  También aprenderemos cómo hacer más escenas mediante la adición de las más viñetas al comic.
+    -->
+
+  <!--
+    Vamos a empezar.
+
+    1) LEER LOS COMENTARIOS. Esto es un comentario. Todo dentro de la etiqueta de comentarios de HTML o  con los signos' /* */' en lenguaje de estilos  CSS, 
+	no se procesa como código, pero aparecen en el  sobre el código. 
+	Para este proyecto, los comentarios los usaremos para  dar instrucciones, consejos y guías para completar el proyecto, 
+	así que debemos leer todos los comentarios que nos encontremos para obtener una comprensión de las tareas que se nos ha pedido  hacer.
+    2) HABITUARNOS Y  ORIENTARNOS DENTRO EL CÓDIGO.
+     HTML se compone de etiquetas que este aspecto<p> </p>.
+	Las etiquetas te dicen algo sobre la información contenida dentro de las mismas. 
+  -->
+
+
+
+    <title>Un comic en html</title>
+	<meta charset='utf-8'">
+
+  <!-- Este es el estilo para el comic -->
+  <style>
+       /* Esto es un comentario CSS*/
+          /*  CSS sirve para dar estilo */
+               /*  en principio no lo vamos a trabajar aunque podemos echarle un vistazo */
+    body {
+      background-color:#4fe5ff;
+      font-family:"Comic Sans MS", sans-serif;
+      line-height:1.2;
+      text-align: center;
+      padding: 1em 0 0 20px;
+    }
+    h1 {
+      text-transform: uppercase;
+      text-shadow: 4px 4px 0px black;
+      font-size:40px;
+      color:rgb(255, 0, 144);
+    }
+    .comic {
+      max-width:826px;
+      margin:60px auto 0;
+    }
+    .scene {
+      width: 250px;
+      height:250px;
+      border:3px solid rgb(255, 255, 255);
+      background: #fff;
+      margin:8px;
+      display: inline-block;
+      position: relative;
+    }
+    .scene img {
+      width:100%;
+      height:100%;
+      display: block;
+    }
+    .caption {
+      padding:10px;
+      margin:0;
+      position: absolute;
+      left:0;
+      right:0;
+      background:#71c3e9;
+      text-align:left;
+      top:0;
+    }
+    .caption.bottom {
+      bottom:0;
+      top:auto;
+      border-top:2px solid rgb(255, 255, 255);
+    }
+    .caption.top {
+      top:0;
+       border-bottom:2px solid black;
+    }
+    .speech {
+      width:40%;
+      border-radius:50%;
+      border:2px solid black;
+      margin:0;
+      position: absolute;
+      z-index:1;
+      background: rgb(255, 117, 227) ;
+      padding:20px;
+      top:-15px;
+      text-align: center;
+    }
+ 
+    /* CSS avanzado para la orientación de los globos con respecto al personaje*/
+    .speech:after {
+      border-color: rgb(139, 201, 255) transparent;
+      border-style: solid;
+      border-width: 13px 13px 0;
+      bottom: -11px;
+      content: "";
+      display: block;
+      left: 50%;
+      margin-left:-14px;
+      position: absolute;
+      width: 0;
+    }
+    .speech:before {
+      border-color: rgb(234, 142, 255) transparent;
+      border-style: solid;
+      border-width: 16px 16px 0;
+      bottom: -15px;
+      content: "";
+      display: block;
+      left: 50%;
+      margin-left:-17px;
+      position: absolute;
+      width: 0;
+    }
+    .speech.left {
+      left:-15px;
+    }
+    .speech.right {
+      right:-15px;
+    }
+
+    footer {
+      clear:both;
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- 
+    Tarea 1: 
+Primero, ¿por qué no cambiar el encabezado <h1> para dar al cómic un nombre más apropiado.  
+Cualquier texto que va entre las etiquetas <h1> y </h1> se convertirá en el título.</h1>  -->
+  <h1>El comic de Barbie</h1>
+  <h2>Todo puede ser fruto de nuestra imaginación </h2>
+
+  <p>Aprendiendo los lenguajes de la web... </p>
+
+  <!-- 
+  Aquí es donde comienza el cómic. 
+    El <div> con class 'comic'envuelve cada div 'escena  o viñeta ' y contiene a todas las escenas.</div>
+  -->
+  <div class="comic">
+
+      <!--
+        Tarea2
+        El  HTML  del div inferior es una escena de a comic.
+        Empiece por cambiar las imágenes de la escena con una de tus propias fotos.  
+        Como la escena es cuadrada una foto cuadrada funcionará mejor. ¿Por qué no obtener la url de la imagen de una de tus fotos de Instagram?   Cambiar el valor del atributo src de la etiqueta img que va entre las comillas dobles
+      -->
+      <div class="scene">
+        <p class="caption bottom">Comenzó la aventura al mundo real...</p>
+        <p class="speech left">¡Te acompaño Barbie!</p>
+        <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/ATE54F7PFNC7VHMZE5ESVUBWYA.jpg" alt="" />
+      </div>
+
+       <!-- 
+    ¡ Magnífico! Ahora veamos algunos globos y leyendas incorporados en  otras escenas.
+
+Tarea 3:
+        Ver la primera escena anterior.  Tiene un título y un bocadillo de diálogo.
+        Copiando el párrafo del discurso<p>, adicione una burbuja del discurso de la segunda escena más abajo y luego cambiar su texto.
+      -->
+      <div class="scene">
+        <p class="caption top">Todo el mundo les miraba...</p>
+        <img src="https://media.vogue.mx/photos/62bb0ea1e61681ee11606abb/16:9/w_1280,c_limit/margot-robbie-ryan-gosling-pelicula-barbie-GettyImages-1241583766.jpg" alt="" />
+      </div>
+
+      <!-- 
+       Dependiendo de la foto usemos, es posible que desee mover los subtítulos a la 'parte superior' o la 'inferior',
+         o el globo de diálogo "izquierda o derecha".
+
+         Tarea 4:
+         Mira la cuarta escena a continuación. Tiene un bocadillo en el lado izquierdo.
+         Cambie el nombre de la clase "left" a "right" para que el bocadillo se mueva hacia el lado derecho.
+         Si desea que una leyenda esté en la parte superior, nos aseguramos  de que tenga la clase 'top', si lo deseamos en la parte inferior, asegúrese de que tenga la clase 'bottom'. Podemos hacer este cambio en la escena o viñetas
+      -->
+      <div class="scene">
+        <p class="speech right">Bueno,  ! ahora si que nos vemos mejor !</p>
+        <img src="https://media1.popsugar-assets.com/files/thumbor/iVDVUvS_mk4jgUb617iMdsCjjUg/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-:watermark-!popsugar-watermark_2x.png,-5,-5,0!-/2022/06/29/678/n/1922564/aa5d5c538711e159_BGUS_2412638_001/i/Barbie-Movie-Outfit-Barbie-Ken-Western-Inspired-Looks.jpg" alt="" />
+      </div>
+
+      <div class="scene">
+        <p class="caption top">Pero Ken tenía otro plan.</p>
+        <img src="https://s.abcnews.com/images/GMA/ryan-gosling-4-ht-gmh-230531_1685553813954_hpEmbed_24x13_992.jpg" alt="" />
+      </div>
+      
+      <div class="scene">
+        <p class="speech right"> Ha salido todo mal chicos...</p>
+        <img src="https://imagenes.20minutos.es/files/og_thumbnail_1900/uploads/imagenes/2023/07/25/kingsley-ben-adir-ryan-gosling-y-ncuti-gatwa-en-barbie.jpeg" alt="" />
+      </div>
+
+      <div class="scene">
+        <p class="caption bottom">La próxima vez, Barbie irá sola. </p>
+        <img src="https://editorialtelevisa.brightspotcdn.com/dims4/default/a7531a7/2147483647/strip/true/crop/1194x672+3+0/resize/1000x563!/quality/90/?url=https%3A%2F%2Fk2-prod-editorial-televisa.s3.amazonaws.com%2Fbrightspot%2Fe3%2Fe6%2F7eee123d4cc7be769c3ae8739a87%2Fbarbie-palomera.jpg" alt="" />
+      </div>
+
+       <!-- 
+        ¿ Este es el final del cómic :( ?
+        ¿Queremos crear a un cómic más grande?
+
+        Tarea 5:
+        Copiar el código HTML de tres 'escena' y pegar por debajo de este comentario... ahora tenemos 3 escenas más en nuestro comic ;)
+      -->
+
+  </div>
+
+  
+  
+
+
+
+  <footer>
+    <p> Hecho por Andra </p>
+      <!-- Créditos  para imágenes -->
+   
+  </footer>
+
+</body>
+</html>
